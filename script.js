@@ -47,7 +47,7 @@ preBtn.addEventListener('click', () => {
 
 
 const popup = document.querySelector('.popup')
-const images= document.querySelectorAll('.img img')
+const images= document.querySelectorAll('img')
 const popupImg= document.getElementById('popup-image')
 const close = document.getElementById("close")
 
@@ -61,3 +61,4 @@ images.forEach(image => {
 close.addEventListener("click", ()=>{
     popup.classList.remove('clicked')
 })
+
