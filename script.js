@@ -50,15 +50,19 @@ const popup = document.querySelector('.popup')
 const images= document.querySelectorAll('img')
 const popupImg= document.getElementById('popup-image')
 const close = document.getElementById("close")
+const content= document.querySelector(".content")
 
 images.forEach(image => {
     image.addEventListener('click', ()=>{
         popupImg.src = image.src
         popup.classList.add('clicked')
+        content.classList.add('bodyblur')
     })
     
 });
 close.addEventListener("click", ()=>{
     popup.classList.remove('clicked')
+        content.classList.remove('bodyblur')
+
 })
 

@@ -184,10 +184,18 @@ section {
     border-radius: 10px;
     border: 2px solid black;
     height: 90%;
-    width: 90%;
+     width: 90%;
+
     top: 5%;
     left: 5%;
     z-index: 1;
+    /* backdrop-filter: blur(100px);
+    background: rgba(255,255, 255, 0.3); */
+}
+.bodyblur{
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(5px);
+    pointer-events: none;
 }
 #close{
     position: inherit;
