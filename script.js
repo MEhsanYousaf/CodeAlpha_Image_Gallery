@@ -47,22 +47,48 @@ preBtn.addEventListener('click', () => {
 
 
 const popup = document.querySelector('.popup')
-const images= document.querySelectorAll('img')
-const popupImg= document.getElementById('popup-image')
+const images = document.querySelectorAll('img')
+const popupImg = document.getElementById('popup-image')
 const close = document.getElementById("close")
-const content= document.querySelector(".content")
+const content = document.querySelector(".content")
+const nextImg = document.getElementById("nextImg")
+const prevImg = document.getElementById("prevImg")
 
-images.forEach(image => {
-    image.addEventListener('click', ()=>{
+images.forEach((image, i) => {
+    image.addEventListener('click', (a) => {
+        a.stopPropagation();
         popupImg.src = image.src
+        let imgIndex = i;
+        prevImg.addEventListener("click", () => {
+
+            imgIndex--
+            popupImg.src = images[imgIndex].src
+        })
+        nextImg.addEventListener("click", () => {
+            imgIndex++
+            popupImg.src = images[imgIndex].src
+        })
         popup.classList.add('clicked')
         content.classList.add('bodyblur')
+
+
     })
-    
+
+    // console.log(i)
+
 });
-close.addEventListener("click", ()=>{
+
+// content.addEventListener("click", ()=>{
+//     if(popup.classList.contains('clicked')){
+//         popup.classList.remove('clicked')
+//     content.classList.remove('bodyblur')
+//     }
+// })
+
+
+close.addEventListener("click", () => {
     popup.classList.remove('clicked')
-        content.classList.remove('bodyblur')
+    content.classList.remove('bodyblur')
 
 })
 

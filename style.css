@@ -6,6 +6,17 @@ body {
     position: relative;
 }
 
+section {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+    font-style: italic;
+    text-decoration: underline;
+}
 
 .image-box {
     width: 25%;
@@ -21,12 +32,7 @@ ul {
     margin: 0;
 }
 
-h1 {
-    text-align: center;
-    margin: 10px;
-    font-style: italic;
-    text-decoration: underline;
-}
+
 
 header {
     width: 100%;
@@ -36,12 +42,6 @@ header {
     width: 100%;
 }
 
-
-
-.link {
-    text-decoration: none;
-    color: white;
-}
 
 marquee {
     color: red;
@@ -54,10 +54,7 @@ marquee span {
     text-decoration: underline;
 }
 
-section {
-    margin: 0;
-    padding: 0;
-}
+
 
 .carousel {
     /* width: 100%; */
@@ -69,12 +66,6 @@ section {
 
 }
 
-#nexBtn {
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    z-index: 1;
-}
 
 #nexBtn,
 #preBtn {
@@ -91,6 +82,14 @@ section {
     z-index: 1;
     left: 30px;
 }
+
+#nexBtn {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    z-index: 1;
+}
+
 
 #preBtn:hover,
 #nexBtn:hover {
@@ -152,7 +151,10 @@ section {
     height: 550px;
 }
 
-.img ,.popup {
+
+/* ............... */
+
+.img {
     /* background-color: green; */
     border: 2px solid black;
     border-radius: 10px;
@@ -182,25 +184,49 @@ section {
     display: none;
     position: fixed;
     border-radius: 10px;
+    object-position: center;
+    object-fit: cover !important;
     border: 2px solid black;
     height: 90%;
-     width: 90%;
-
+    width: 90%;
     top: 5%;
     left: 5%;
-    z-index: 1;
+    z-index: 999;
     /* backdrop-filter: blur(100px);
     background: rgba(255,255, 255, 0.3); */
 }
-.bodyblur{
+
+.bodyblur {
     background: rgba(255, 255, 255, 0.3);
     filter: blur(5px);
     pointer-events: none;
 }
-#close{
+
+#nextImg,
+#prevImg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+
+}
+
+#prevImg {
+    left: 20px;
+}
+
+#nextImg {
+    right: 20px;
+}
+
+#close {
     position: inherit;
     color: black;
-    background-color: rgb(255, 255, 255,0.3);
+    background-color: rgb(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     right: 5.3%;
     top: 5.3%;
@@ -213,8 +239,9 @@ section {
     width: 30px;
     border-radius: 50%;
 }
-abbr{
-    position:fixed;
+
+abbr {
+    position: fixed;
     border-radius: 10px;
     border: none;
 }
@@ -222,13 +249,15 @@ abbr{
 .clicked {
     display: flex;
 }
-footer{
+
+footer {
     background-color: black;
     color: white;
     margin: 0;
 
 }
-h2{
+
+h2 {
     font-style: italic;
     margin: 10px;
 
@@ -242,7 +271,7 @@ h2{
 
 }
 
-@media (max-width: 566px) {
+@media (max-width: 576px) {
     .b {
         grid-column: auto;
     }
@@ -250,6 +279,21 @@ h2{
     .c,
     .rowspan {
         height: 270px;
+    }
+
+    #prevImg {
+        left: 10px;
+    }
+
+    #nextImg {
+        right: 10px;
+    }
+    .popup{
+        height: 50%;
+        top: 30%;
+    }
+    #close{
+        top: 30%;
     }
 }
 
